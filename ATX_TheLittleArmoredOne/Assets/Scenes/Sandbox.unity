@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 611819266}
   - component: {fileID: 611819265}
   - component: {fileID: 611819264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1582,7 +1582,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1024879799
 MonoBehaviour:
@@ -1597,6 +1597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
+  jumpHeight: 3
 --- !u!1 &1718044071
 GameObject:
   m_ObjectHideFlags: 0
