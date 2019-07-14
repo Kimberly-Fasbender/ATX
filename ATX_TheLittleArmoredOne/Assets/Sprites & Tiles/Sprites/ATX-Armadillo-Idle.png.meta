@@ -1,7 +1,40 @@
 fileFormatVersion: 2
 guid: 3058363dbadc14a27bc3cdbcd8d3a4d1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5108720401106071257
+    second: ATX-Armadillo-Idle_0
+  - first:
+      213: -732042177832508553
+    second: ATX-Armadillo-Idle_1
+  - first:
+      213: 9096509161327975900
+    second: ATX-Armadillo-Idle_2
+  - first:
+      213: 7997249134309412911
+    second: ATX-Armadillo-Idle_3
+  - first:
+      213: -7812748467951814814
+    second: ATX-Armadillo-Idle_4
+  - first:
+      213: -6698811720103887331
+    second: ATX-Armadillo-Idle_5
+  - first:
+      213: 3370591207781337054
+    second: ATX-Armadillo-Idle_6
+  - first:
+      213: 8465482588139848507
+    second: ATX-Armadillo-Idle_7
+  - first:
+      213: -6013927430278942755
+    second: ATX-Armadillo-Idle_8
+  - first:
+      213: 5900805430220401502
+    second: ATX-Armadillo-Idle_9
+  - first:
+      213: 800437538453129570
+    second: ATX-Armadillo-Idle_10
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +73,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,9 +102,273 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 128
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4b56d3cfffd4eab91f14aba2e89d69
+      internalID: 5108720401106071257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 128
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05e387ab482849e3bea7a9997440ef0
+      internalID: -732042177832508553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 128
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f12ee737f87e4ff7a30042116805d1a
+      internalID: 9096509161327975900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 128
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b147cbb8a19449a9e91b72a72d5abf
+      internalID: 7997249134309412911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 128
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3268ca90fae4e69bcf1b2eefcf11dc
+      internalID: -7812748467951814814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 128
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759fced4a10cd40c5a05e007606fe4a1
+      internalID: -6698811720103887331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59cc609619a424975909643ec0c91b9b
+      internalID: 3370591207781337054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c32181facc714e85a22ee2cbc5816f4
+      internalID: 8465482588139848507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ae814d11e834c36bd036b093cc9e2e
+      internalID: -6013927430278942755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a04b13b99324c459c62947b0740f61
+      internalID: 5900805430220401502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATX-Armadillo-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 0
+        width: 124
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f2cc75362e0420d9262fdf2f9c2c6f
+      internalID: 800437538453129570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
