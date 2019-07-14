@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rigidBody;
     Animator animator;
-    Collider2D collider;
+    Collider2D collider2d;
     CapsuleCollider2D capsuleCollider;
     Vector2 origCapsuleColliderOffset;
     Vector2 origCapsuleColliderSize;
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        collider = GetComponent<Collider2D>();
+        collider2d = GetComponent<Collider2D>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
 
         origCapsuleColliderOffset = new Vector2(capsuleCollider.offset.x, capsuleCollider.offset.y);
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         LayerMask ground = LayerMask.GetMask("Ground");
-        bool isTouchingGround = collider.IsTouchingLayers(ground);
+        bool isTouchingGround = collider2d.IsTouchingLayers(ground);
 
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
