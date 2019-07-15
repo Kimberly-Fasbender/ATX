@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rigidBody;
     Animator animator;
-    CapsuleCollider2D capsuleCollider;
+    CapsuleCollider2D bodyCollider;
+    BoxCollider2D feetCollider;
 
     Vector2 origCapsuleColliderOffset;
     Vector2 origCapsuleColliderSize;
@@ -18,10 +19,11 @@ public class Player : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        bodyCollider = GetComponent<CapsuleCollider2D>();
+        feetCollider = GetComponent<BoxCollider2D>();
 
-        origCapsuleColliderOffset = new Vector2(capsuleCollider.offset.x, capsuleCollider.offset.y);
-        origCapsuleColliderSize = new Vector2(capsuleCollider.size.x, capsuleCollider.size.y); 
+        origCapsuleColliderOffset = new Vector2(bodyCollider.offset.x, bodyCollider.offset.y);
+        origCapsuleColliderSize = new Vector2(bodyCollider.size.x, bodyCollider.size.y); 
     }
 
     void Update()
@@ -54,7 +56,7 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         LayerMask ground = LayerMask.GetMask("Ground");
-        bool isTouchingGround = capsuleCollider.IsTouchingLayers(ground);
+        bool isTouchingGround = feetCollider.IsTouchingLayers(ground);
 
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
@@ -75,13 +77,13 @@ public class Player : MonoBehaviour
     {
          if (animator.GetBool("Jumping"))
         {
-            capsuleCollider.offset = new Vector2(-0.005f, 0.005f);
-            capsuleCollider.size = new Vector2(0.0001f, 0.45f);
+            bodyCollider.offset = new Vector2(-0.005f, 0.005f);
+            bodyCollider.size = new Vector2(0.0001f, 0.45f);
         } 
         else 
         {
-            capsuleCollider.offset = origCapsuleColliderOffset;
-            capsuleCollider.size = origCapsuleColliderSize;
+            bodyCollider.offset = origCapsuleColliderOffset;
+            bodyCollider.size = origCapsuleColliderSize;
         }
     }
 }
