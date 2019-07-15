@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Run();
-        MirrorSprite();
+        MirrorPlayer();
         Jump();
     }
      private void Run()
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         animator.SetBool("Running", isRunning);
     }
 
-     private void MirrorSprite()
+     private void MirrorPlayer()
     {
         bool isRunning = Mathf.Abs(rigidBody.velocity.x) > 0;
 
