@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class EnemyTourist : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float moveSpeed = 1f;
+
+    Rigidbody2D rigidBody;
+    
     void Start()
     {
-        
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Move();
+    }
+
+    private void Move() 
+    {
+        if (IsFacingRight())
+        {
+            rigidBody.velocity = new Vector2(moveSpeed, rigidBody.velocity.y);
+        }
+        else
+        {
+            rigidBody.velocity = new Vector2(-moveSpeed, rigidBody.velocity.y);
+        }
+    }
+
+    bool IsFacingRight()
+    {
+        return transform.localScale.x > 0;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        transform.localScale = new Vector2(-(Mathf.Sign(rigidBody.velocity.x)), 1f);
     }
 }
+

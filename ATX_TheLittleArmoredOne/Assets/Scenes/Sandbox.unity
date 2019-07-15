@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 352139383}
   - component: {fileID: 352139382}
   - component: {fileID: 352139386}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy Tourist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352139379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4, y: -2.79, z: -3.3980813}
+  m_LocalPosition: {x: -0.72, y: -2.91, z: -3.3980813}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01cb3151c3a447729ea811825a98569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
 --- !u!95 &352139383
 Animator:
   serializedVersion: 3
@@ -281,8 +282,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00096309185, y: 0.000056147575}
-  m_Size: {x: 0.5175512, y: 0.58208966}
+  m_Offset: {x: -0.0055291653, y: -0.0008713007}
+  m_Size: {x: 0.50456667, y: 0.58023477}
   m_Direction: 0
 --- !u!50 &352139385
 Rigidbody2D:
@@ -315,10 +316,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.21662855, y: -0.26135528}
+  m_Offset: {x: 0.1991533, y: -0.3903246}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -329,7 +330,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.060056686, y: 0.31679273}
+  m_Size: {x: 0.053471327, y: 0.27754736}
   m_EdgeRadius: 0
 --- !u!1 &500058251
 GameObject:
@@ -646,7 +647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1202762, y: 1.2632225, z: -3.8306828}
+  m_LocalPosition: {x: 1.1199768, y: 1.3327978, z: -3.8306828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 87363599}
@@ -2665,8 +2666,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -6.0143476, y: 6.0028076}
-      - {x: -5.9667363, y: -4.058815}
+    - - {x: -6.116392, y: 6.0905886}
+      - {x: -6.0753074, y: -4.040136}
       - {x: 25.013203, y: -4.0520744}
       - {x: 24.987808, y: 6.0051303}
 --- !u!1 &839273270
@@ -2964,7 +2965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330689502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.04207, y: -5.497901, z: 0.81335354}
+  m_LocalPosition: {x: -11.26207, y: -4.247901, z: 0.81335354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2058667473}
@@ -3097,7 +3098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898524934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.04207, y: -5.497901, z: 0.81335354}
+  m_LocalPosition: {x: -11.26207, y: -4.247901, z: 0.81335354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 839273271}
@@ -3263,12 +3264,12 @@ PrefabInstance:
     - target: {fileID: 80800157412224281, guid: 89bf633d9512a4ea8993160abe184638,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.95
+      value: -4.17
       objectReference: {fileID: 0}
     - target: {fileID: 80800157412224281, guid: 89bf633d9512a4ea8993160abe184638,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 80800157412224281, guid: 89bf633d9512a4ea8993160abe184638,
         type: 3}
