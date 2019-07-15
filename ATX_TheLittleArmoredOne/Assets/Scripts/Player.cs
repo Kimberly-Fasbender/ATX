@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpHeight = 4.0f;
+    [SerializeField] Vector2 deathJump = new Vector2 (0f, 18f);
 
     Rigidbody2D rigidBody;
     Animator animator;
@@ -14,7 +15,10 @@ public class Player : MonoBehaviour
 
     Vector2 origCapsuleColliderOffset;
     Vector2 origCapsuleColliderSize;
+
+    bool isAlive = true;
     
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -28,9 +32,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive) { return; }
         Run();
         MirrorPlayer();
         Jump();
+        Die();
     }
      private void Run()
     {
@@ -84,6 +90,17 @@ public class Player : MonoBehaviour
         {
             bodyCollider.offset = origCapsuleColliderOffset;
             bodyCollider.size = origCapsuleColliderSize;
+        }
+    }
+
+    private void Die() 
+    {
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        {
+            isAlive = false;
+        
+            rigidBody.velocity = deathJump;
+            animator.SetTrigger("Dying");
         }
     }
 }
