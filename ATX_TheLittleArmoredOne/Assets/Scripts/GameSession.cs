@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameSession : MonoBehaviour
 {
     [SerializeField] int playerLives = 3;
+    [SerializeField] int playerScore = 0; //TODO: REMOVE - for debugging only
+
     int startScreenIndex = 0;
 
     void Awake()
@@ -56,5 +58,10 @@ public class GameSession : MonoBehaviour
     {
         SceneManager.LoadScene(startScreenIndex);
         Destroy(gameObject);
+    }
+
+    public void AddPoints(int points)
+    {
+        playerScore += points;
     }
 }
