@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class MusicNote : MonoBehaviour
 {
+    [SerializeField] AudioClip musicNoteSFX;
+
+    AudioListener audioListener;
+
     int points = 1;
     bool isPickedUp = false;
 
@@ -11,8 +15,10 @@ public class MusicNote : MonoBehaviour
     {
         if (!isPickedUp)
         {
-            // play one off sound on camera //
+            audioListener = FindObjectOfType<AudioListener>();
+            
             FindObjectOfType<GameSession>().AddPoints(points);
+            AudioSource.PlayClipAtPoint(musicNoteSFX, audioListener.transform.position);
             Destroy(gameObject);
             isPickedUp = true;
         }
