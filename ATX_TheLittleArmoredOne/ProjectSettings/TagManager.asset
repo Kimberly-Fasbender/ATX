@@ -50,6 +50,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3639045603
     locked: 0
+  - name: Environment
+    uniqueID: 1209378993
+    locked: 0
   - name: Enemy
     uniqueID: 654971323
     locked: 0
