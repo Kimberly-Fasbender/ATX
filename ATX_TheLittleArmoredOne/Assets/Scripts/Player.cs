@@ -102,6 +102,8 @@ public class Player : MonoBehaviour
         
             rigidBody.velocity = deathJump;
             animator.SetTrigger("Dying");
+
+            FindObjectOfType<GameSession>().ArrangePlayerFuneral();
         }
     }
 }
