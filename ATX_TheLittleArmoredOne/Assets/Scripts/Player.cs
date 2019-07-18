@@ -74,14 +74,24 @@ public class Player : MonoBehaviour
     {
         LayerMask ground = LayerMask.GetMask("Ground");
         bool isTouchingGround = feetCollider.IsTouchingLayers(ground);
+        Vector2 jumpVelocity = new Vector2(0, 
+                Mathf.Sqrt(-2.0f * Physics2D.gravity.y * jumpHeight));
 
+        // full jump
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
-            Vector2 jumpVelocity = new Vector2(0, 
-                Mathf.Sqrt(-2.0f * Physics2D.gravity.y * jumpHeight));
             rigidBody.velocity = jumpVelocity;
 
-            animator.SetTrigger("TakingOff");
+            animator.SetTrigger("TakingOff"); 
+        }
+        
+        // early release jump
+        else if (Input.GetButtonUp("Jump"))
+        {
+            if (rigidBody.velocity.y > 0)
+            {
+                rigidBody.velocity = new Vector2(0, rigidBody.velocity.y * 0.5f);
+            }
         }
 
         // animation transition
