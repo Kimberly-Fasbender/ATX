@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    // RaycastHit.point and RaycastHit.normal
+
     [SerializeField] float runSpeed = 5f;
+    [SerializeField] float rollSpeed = 20f;
     [SerializeField] float jumpHeight = 4.0f;
     [SerializeField] Vector2 deathJump = new Vector2 (0f, 18f);
 
@@ -17,8 +21,7 @@ public class Player : MonoBehaviour
     Vector2 origCapsuleColliderSize;
 
     bool isAlive = true;
-    float startingPos;
-    
+    private RaycastHit2D hit; 
 
     void Start()
     {
@@ -33,23 +36,27 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        startingPos = rigidBody.position.y;
         if (!isAlive) { return; }
         Run();
         MirrorPlayer();
         Jump();
         Roll();
+        UpdateCapsuleCollider();
         Die();
-        
+
+        hit = Physics2D.Raycast(transform.position, Vector2.down, 5f, LayerMask.GetMask("Ground"));
     }
-     private void Run()
+
+    private void Run()
     {
+        
+
         float moveInput = Input.GetAxis("Horizontal"); 
         Vector2 playerVelocity = new Vector2(moveInput * runSpeed, rigidBody.velocity.y);
         rigidBody.velocity = playerVelocity;
 
-        // animation transition 
-        bool isRunning = Mathf.Abs(rigidBody.velocity.x) > 0;
+        // animation transitions
+        bool isRunning = (Mathf.Abs(rigidBody.velocity.x) > 0) && (hit.normal.y > 0.9f);
         animator.SetBool("Running", isRunning);
     }
 
@@ -80,12 +87,12 @@ public class Player : MonoBehaviour
         // animation transition
         animator.SetBool("Jumping", !isTouchingGround); 
 
-        UpdateCapsuleCollider();
+        // UpdateCapsuleCollider();
     }
 
     private void UpdateCapsuleCollider() 
     {
-         if (animator.GetBool("Jumping"))
+        if (animator.GetBool("Jumping") || animator.GetBool("Rolling"))
         {
             bodyCollider.offset = new Vector2(-0.005f, 0.005f);
             bodyCollider.size = new Vector2(0.0001f, 0.45f);
@@ -112,14 +119,31 @@ public class Player : MonoBehaviour
     }
 
     private void Roll()
-    {
-        // float startingPos = rigidBody.position.y;
+    { 
+        // up is negative, down is positive
+        bool isRolling = hit.normal.y < 0.9f;
+        float rollAngle = Vector2.Angle(hit.point, hit.normal);
 
-        // bool hasVerticalSpeed = Mathf.Abs(rigidBody.velocity.y) > 0;
-        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && 
-            startingPos != rigidBody.position.y)
+        float moveInput = Input.GetAxis("Horizontal"); 
+        Debug.Log(rollAngle);
+
+        if (moveInput > 0)
         {
-            Debug.Log("We're rolling bitch!");
+            if (isRolling && rollAngle > 130.0f)
+            {
+                Vector2 playVelocity = new Vector2(moveInput * rollSpeed, rigidBody.velocity.y);
+                rigidBody.velocity = playVelocity;
+            }
         }
+        else if (moveInput < 0)
+        {
+            if (isRolling && (rollAngle > 50.0f && rollAngle < 80.0f))
+            {
+                Vector2 playVelocity = new Vector2(moveInput * rollSpeed, rigidBody.velocity.y);
+                rigidBody.velocity = playVelocity;
+            }
+        }
+
+        animator.SetBool("Rolling", isRolling);
     }
 }
