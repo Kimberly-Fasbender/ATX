@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     Vector2 origCapsuleColliderSize;
 
     bool isAlive = true;
+    float startingPos;
     
 
     void Start()
@@ -32,11 +33,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        startingPos = rigidBody.position.y;
         if (!isAlive) { return; }
         Run();
         MirrorPlayer();
         Jump();
+        Roll();
         Die();
+        
     }
      private void Run()
     {
@@ -104,6 +108,18 @@ public class Player : MonoBehaviour
             animator.SetTrigger("Dying");
 
             FindObjectOfType<GameSession>().ArrangePlayerFuneral();
+        }
+    }
+
+    private void Roll()
+    {
+        // float startingPos = rigidBody.position.y;
+
+        // bool hasVerticalSpeed = Mathf.Abs(rigidBody.velocity.y) > 0;
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && 
+            startingPos != rigidBody.position.y)
+        {
+            Debug.Log("We're rolling bitch!");
         }
     }
 }
