@@ -74,8 +74,9 @@ public class Player : MonoBehaviour
         {
             rigidBody.velocity = jumpVelocity;
 
-            animator.SetTrigger("TakingOff");
+            animator.SetTrigger("TakingOff"); 
         }
+        
         // early release jump
         else if (Input.GetButtonUp("Jump"))
         {
