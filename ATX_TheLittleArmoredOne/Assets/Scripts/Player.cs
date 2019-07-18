@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    // RaycastHit.point and RaycastHit.normal
-
+    // configuration params
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float rollSpeed = 20f;
     [SerializeField] float jumpHeight = 4.0f;
     [SerializeField] Vector2 deathJump = new Vector2 (0f, 18f);
+    float originOffset = 0.4f;
 
-    Rigidbody2D rigidBody;
-    Animator animator;
-    CapsuleCollider2D bodyCollider;
-    BoxCollider2D feetCollider;
+    // cached component references
+    private Rigidbody2D rigidBody;
+    private Animator animator;
+    private CapsuleCollider2D bodyCollider;
+    private BoxCollider2D feetCollider;
 
-    Vector2 origCapsuleColliderOffset;
-    Vector2 origCapsuleColliderSize;
-
-    bool isAlive = true;
+    // state
+    private bool isAlive = true;
+    private Vector2 origCapsuleColliderOffset;
+    private Vector2 origCapsuleColliderSize;
     private RaycastHit2D hit; 
 
     void Start()
@@ -44,18 +44,22 @@ public class Player : MonoBehaviour
         UpdateCapsuleCollider();
         Die();
 
-        hit = Physics2D.Raycast(transform.position, Vector2.down, 5f, LayerMask.GetMask("Ground"));
+        // need to fix (always to the right when standing still...)
+        float thing = originOffset * Mathf.Sign(rigidBody.velocity.x);
+        print(thing);
+        Vector2 thing2 = new Vector2 (transform.position.x + thing, transform.position.y);
+        hit = Physics2D.Raycast(thing2, Vector2.down, 5f, LayerMask.GetMask("Ground"));
+        Debug.DrawRay(thing2, Vector2.down, Color.magenta, 0.1f);
     }
 
     private void Run()
     {
-        
-
+        // adjusting x velocity
         float moveInput = Input.GetAxis("Horizontal"); 
         Vector2 playerVelocity = new Vector2(moveInput * runSpeed, rigidBody.velocity.y);
         rigidBody.velocity = playerVelocity;
 
-        // animation transitions
+        // animation transition
         bool isRunning = (Mathf.Abs(rigidBody.velocity.x) > 0) && (hit.normal.y > 0.9f);
         animator.SetBool("Running", isRunning);
     }
@@ -96,12 +100,11 @@ public class Player : MonoBehaviour
 
         // animation transition
         animator.SetBool("Jumping", !isTouchingGround); 
-
-        // UpdateCapsuleCollider();
     }
 
     private void UpdateCapsuleCollider() 
     {
+        // updating shape of capsule collider depending on if ball shaped or not
         if (animator.GetBool("Jumping") || animator.GetBool("Rolling"))
         {
             bodyCollider.offset = new Vector2(-0.005f, 0.005f);
@@ -130,30 +133,34 @@ public class Player : MonoBehaviour
 
     private void Roll()
     { 
-        // up is negative, down is positive
         bool isRolling = hit.normal.y < 0.9f;
         float rollAngle = Vector2.Angle(hit.point, hit.normal);
 
         float moveInput = Input.GetAxis("Horizontal"); 
-        Debug.Log(rollAngle);
+        // Debug.Log(rollAngle);
 
         if (moveInput > 0)
         {
             if (isRolling && rollAngle > 130.0f)
             {
-                Vector2 playVelocity = new Vector2(moveInput * rollSpeed, rigidBody.velocity.y);
-                rigidBody.velocity = playVelocity;
+                IncreaseRollVelocity(moveInput);
             }
         }
         else if (moveInput < 0)
         {
             if (isRolling && (rollAngle > 50.0f && rollAngle < 80.0f))
             {
-                Vector2 playVelocity = new Vector2(moveInput * rollSpeed, rigidBody.velocity.y);
-                rigidBody.velocity = playVelocity;
+                IncreaseRollVelocity(moveInput);
             }
         }
 
+        // animation transition
         animator.SetBool("Rolling", isRolling);
+    }
+
+    private void IncreaseRollVelocity(float moveInput)
+    {
+        Vector2 playVelocity = new Vector2(moveInput * rollSpeed, rigidBody.velocity.y);
+        rigidBody.velocity = playVelocity;
     }
 }
