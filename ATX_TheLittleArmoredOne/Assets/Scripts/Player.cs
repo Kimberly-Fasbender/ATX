@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
 
         origCapsuleColliderOffset = new Vector2(bodyCollider.offset.x, bodyCollider.offset.y);
         origCapsuleColliderSize = new Vector2(bodyCollider.size.x, bodyCollider.size.y); 
+        origBoxColliderOffset = new Vector2(feetCollider.offset.x, feetCollider.offset.y);
+        origBoxColliderSize = new Vector2(feetCollider.size.x, feetCollider.size.y);
     }
 
     void Update()
@@ -119,8 +121,11 @@ public class Player : MonoBehaviour
 
     private void Die() 
     {
-        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")) || 
-            feetCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        LayerMask enemy = LayerMask.GetMask("Enemy");
+        LayerMask hazards = LayerMask.GetMask("Hazards");
+
+        if (bodyCollider.IsTouchingLayers(enemy) || feetCollider.IsTouchingLayers(enemy) ||
+            bodyCollider.IsTouchingLayers(hazards) || feetCollider.IsTouchingLayers(hazards))
         {
             isAlive = false;
         
