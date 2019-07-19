@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] float rollSpeed = 20f;
     [SerializeField] float jumpHeight = 4.0f;
     [SerializeField] Vector2 deathJump = new Vector2 (0f, 18f);
-    float originOffset = 0.4f;
+    float originOffset = 0.09f;
 
     // cached component references
     private Rigidbody2D rigidBody;
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         float thing = originOffset * Mathf.Sign(rigidBody.velocity.x);
         // print(thing);
         Vector2 thing2 = new Vector2 (transform.position.x + thing, transform.position.y);
-        hit = Physics2D.Raycast(thing2, Vector2.down, 5f, LayerMask.GetMask("Ground"));
+        hit = Physics2D.Raycast(thing2, Vector2.down, 0.5f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(thing2, Vector2.down, Color.magenta, 0.1f);
     }
 
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         {
             if (rigidBody.velocity.y > 0)
             {
-                rigidBody.velocity = new Vector2(0, rigidBody.velocity.y * 0.5f);
+                rigidBody.velocity = new Vector2(0, rigidBody.velocity.y * 0.333f);
             }
         }
 
@@ -134,11 +134,10 @@ public class Player : MonoBehaviour
     private void Roll()
     { 
         bool isRolling = hit.normal.y < 0.9f;
-        print(isRolling);
         float rollAngle = Vector2.Angle(hit.point, hit.normal);
 
         float moveInput = Input.GetAxis("Horizontal"); 
-        // Debug.Log(rollAngle);
+        // Debug.Log(hit.normal.y);
 
         if (moveInput > 0)
         {
