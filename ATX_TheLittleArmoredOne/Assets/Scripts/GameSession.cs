@@ -8,8 +8,8 @@ public class GameSession : MonoBehaviour
 {
     [SerializeField] int playerLives = 3;
     [SerializeField] int playerScore = 0; //TODO: REMOVE - for debugging only
-    [SerializeField] Text livesText;
-    [SerializeField] Text scoreText;
+    [SerializeField] public Text livesText;
+    [SerializeField] public Text scoreText;
 
     int startScreenIndex = 0;
 

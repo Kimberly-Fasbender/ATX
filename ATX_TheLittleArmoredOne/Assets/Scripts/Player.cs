@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     // configuration params
     [SerializeField] float runSpeed = 5f;
-    [SerializeField] float rollSpeed = 20f;
+    [SerializeField] float rollSpeed = 8.5f;
     [SerializeField] float jumpHeight = 4.0f;
     [SerializeField] Vector2 deathJump = new Vector2 (0f, 18f);
     float originOffset = 0.09f;
