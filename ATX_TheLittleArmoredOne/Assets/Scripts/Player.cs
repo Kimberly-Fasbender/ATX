@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
         // need to fix (always to the right when standing still...)
         float thing = originOffset * Mathf.Sign(rigidBody.velocity.x);
-        print(thing);
+        // print(thing);
         Vector2 thing2 = new Vector2 (transform.position.x + thing, transform.position.y);
         hit = Physics2D.Raycast(thing2, Vector2.down, 5f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(thing2, Vector2.down, Color.magenta, 0.1f);
@@ -134,6 +134,7 @@ public class Player : MonoBehaviour
     private void Roll()
     { 
         bool isRolling = hit.normal.y < 0.9f;
+        print(isRolling);
         float rollAngle = Vector2.Angle(hit.point, hit.normal);
 
         float moveInput = Input.GetAxis("Horizontal"); 
