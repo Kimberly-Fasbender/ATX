@@ -20,7 +20,7 @@ TagManager:
   - Enemy
   - Interactables
   - Hazards
-  - 
+  - Thwomp
   - 
   - 
   - 
@@ -65,4 +65,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3513084479
+    locked: 0
+  - name: Thwomp
+    uniqueID: 3472861761
     locked: 0

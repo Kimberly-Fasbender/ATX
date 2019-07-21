@@ -121,9 +121,11 @@ public class Player : MonoBehaviour
     {
         LayerMask enemy = LayerMask.GetMask("Enemy");
         LayerMask hazards = LayerMask.GetMask("Hazards");
+        LayerMask thwomp = LayerMask.GetMask("Thwomp");
 
         if (bodyCollider.IsTouchingLayers(enemy) || feetCollider.IsTouchingLayers(enemy) ||
-            bodyCollider.IsTouchingLayers(hazards) || feetCollider.IsTouchingLayers(hazards))
+            bodyCollider.IsTouchingLayers(hazards) || feetCollider.IsTouchingLayers(hazards) ||
+            bodyCollider.IsTouchingLayers(thwomp) || feetCollider.IsTouchingLayers(thwomp))
         {
             isAlive = false;
         
@@ -141,6 +143,7 @@ public class Player : MonoBehaviour
 
         float moveInput = Input.GetAxis("Horizontal"); 
         // Debug.Log(hit.normal.y);
+        // Debug.Log(rollAngle);
 
         if (moveInput > 0)
         {
