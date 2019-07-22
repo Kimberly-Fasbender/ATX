@@ -6,11 +6,13 @@ public class EnemyTourist : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
 
+    Collider2D collider2d;
     Rigidbody2D rigidBody;
     Player player;
     
     void Start()
     {
+        collider2d = GetComponent<Collider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
     }
@@ -45,5 +47,14 @@ public class EnemyTourist : MonoBehaviour
             transform.localScale = new Vector2(-(Mathf.Sign(rigidBody.velocity.x)), 1f);
         }
     }
+
+    // private void Freeze()
+    // {
+    //     if (collision == player.GetComponent<CapsuleCollider2D>() || collision == player.GetComponent<BoxCollider2D>())
+    //     {
+    //         Debug.Log("HERE WE GO");
+    //         gameObject.GetComponent<CapsuleCollider2D>().isTrigger = true;
+    //     }
+    // }
 }
 

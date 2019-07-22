@@ -11,6 +11,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] public Text livesText;
     [SerializeField] public Text scoreText;
 
+    float levelResetDelay = 1f;
     int startScreenIndex = 0;
 
     void Awake()
@@ -65,12 +66,18 @@ public class GameSession : MonoBehaviour
 
     private void TakeLife()
     {
+        playerLives -= 1;
+        
+        StartCoroutine(RestartLevel());
+        livesText.text = playerLives.ToString();
+    }
+
+    IEnumerator RestartLevel()
+    {
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        playerLives -= 1;
+        yield return new WaitForSeconds(levelResetDelay);
         SceneManager.LoadScene(currentSceneIndex);
-
-        livesText.text = playerLives.ToString();
     }
 
     private void ResetGameSession()

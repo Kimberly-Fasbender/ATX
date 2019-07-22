@@ -27,7 +27,8 @@ public class Thwomp : MonoBehaviour
     {
         hit = Physics2D.Raycast(transform.position, Vector2.down, 30.0f, player);
         // Debug.DrawRay(transform.position, Vector2.down, Color.magenta);
-        Fall();
+
+        Fall();  
     }
 
     private void Fall()
@@ -37,8 +38,14 @@ public class Thwomp : MonoBehaviour
             rigidBody.bodyType = RigidbodyType2D.Dynamic;
         }
         else if (collider2d.IsTouchingLayers(ground))
+        // || collider2d.IsTouchingLayers(player))
         {
+            Debug.Log(collider2d.IsTouchingLayers(player));
             rigidBody.bodyType = RigidbodyType2D.Kinematic;
+            // if (collider2d.IsTouchingLayers(player))
+            // {
+            //     Physics.IgnoreLayerCollision(LayerMask.GetMask("Thwomp"), player);
+            // }
         }
         else if (gameObject.transform.position.y < origPos.y)
         {
