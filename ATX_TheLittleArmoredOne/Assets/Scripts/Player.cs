@@ -129,11 +129,26 @@ public class Player : MonoBehaviour
         {
             isAlive = false;
         
-            rigidBody.velocity = deathJump;
+            DeathDrama();
+            StartCoroutine(DeathPause());
             animator.SetTrigger("Dying");
 
             FindObjectOfType<GameSession>().ArrangePlayerFuneral();
         }
+    }
+
+    private void DeathDrama()
+    {
+        rigidBody.velocity = deathJump;
+        bodyCollider.enabled = false;
+        feetCollider.enabled = false;
+    }
+    
+    IEnumerator DeathPause()
+    {
+        Time.timeScale = 0.2f;
+        yield return new WaitForSecondsRealtime(1.5f);
+        Time.timeScale = 1f;
     }
 
     private void Roll()

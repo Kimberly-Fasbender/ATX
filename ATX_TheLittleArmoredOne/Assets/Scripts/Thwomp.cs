@@ -40,7 +40,6 @@ public class Thwomp : MonoBehaviour
         else if (collider2d.IsTouchingLayers(ground))
         // || collider2d.IsTouchingLayers(player))
         {
-            Debug.Log(collider2d.IsTouchingLayers(player));
             rigidBody.bodyType = RigidbodyType2D.Kinematic;
             // if (collider2d.IsTouchingLayers(player))
             // {
