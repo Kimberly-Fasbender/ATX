@@ -7,11 +7,14 @@ public class EnemyTourist : MonoBehaviour
     [SerializeField] float moveSpeed = 1f;
 
     Rigidbody2D rigidBody;
+    Player player;
     
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        player = FindObjectOfType<Player>();
     }
+
 
     void Update()
     {
@@ -37,7 +40,10 @@ public class EnemyTourist : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(rigidBody.velocity.x)), 1f);
+        if (collision != player.GetComponent<CircleCollider2D>())
+        {
+            transform.localScale = new Vector2(-(Mathf.Sign(rigidBody.velocity.x)), 1f);
+        }
     }
 }
 

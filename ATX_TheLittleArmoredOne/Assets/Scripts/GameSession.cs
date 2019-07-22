@@ -29,7 +29,7 @@ public class GameSession : MonoBehaviour
 
     void OnEnable()
     {
-        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+        SceneManager.sceneLoaded += OnLevelLoaded;
     }
 
     void OnDisable()
