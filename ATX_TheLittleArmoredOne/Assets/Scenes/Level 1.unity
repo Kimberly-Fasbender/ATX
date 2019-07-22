@@ -7211,7 +7211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1024879799, guid: 89bf633d9512a4ea8993160abe184638, type: 3}
       propertyPath: rollSpeed
-      value: 8.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1024879799, guid: 89bf633d9512a4ea8993160abe184638, type: 3}
       propertyPath: runSpeed
@@ -7609,12 +7609,12 @@ PrefabInstance:
     - target: {fileID: 8818252406746557130, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5496497
+      value: 1.9678335
       objectReference: {fileID: 0}
     - target: {fileID: 8818252406746557130, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54425883
+      value: 0.5393388
       objectReference: {fileID: 0}
     - target: {fileID: 8818252406746557130, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}

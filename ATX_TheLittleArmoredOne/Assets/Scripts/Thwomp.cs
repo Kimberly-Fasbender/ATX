@@ -23,7 +23,6 @@ public class Thwomp : MonoBehaviour
         origPos = new Vector2 (transform.position.x, transform.position.y);
     }
 
-    // Update is called once per frame
     void Update()
     {
         hit = Physics2D.Raycast(transform.position, Vector2.down, 30.0f, player);

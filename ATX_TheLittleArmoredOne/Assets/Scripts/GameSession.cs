@@ -27,6 +27,24 @@ public class GameSession : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnLevelLoaded;
+    }
+
+    void OnLevelLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Main Menu")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         livesText.text = playerLives.ToString();
