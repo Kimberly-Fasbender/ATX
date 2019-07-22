@@ -11,7 +11,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] public Text livesText;
     [SerializeField] public Text scoreText;
 
-    float levelResetDelay = 3f;
+    float levelResetDelay = 1.5f;
     int startScreenIndex = 0;
 
     void Awake()
