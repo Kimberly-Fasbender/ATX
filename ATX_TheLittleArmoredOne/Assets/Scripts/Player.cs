@@ -143,7 +143,7 @@ public class Player : MonoBehaviour
         bodyCollider.enabled = false;
         feetCollider.enabled = false;
     }
-    
+
     IEnumerator DeathPause()
     {
         Time.timeScale = 0.2f;
@@ -154,26 +154,32 @@ public class Player : MonoBehaviour
     private void Roll()
     { 
         bool isRolling = hit.normal.y < 0.9f;
-        float rollAngle = Vector2.Angle(hit.point, hit.normal);
+        // float rollAngle = Vector2.Angle(hit.point, hit.normal);
+        float newAngle = Vector2.Angle(hit.normal, Vector2.up);
 
         float moveInput = Input.GetAxis("Horizontal"); 
-        // Debug.Log(hit.normal.y);
-        // Debug.Log(rollAngle);
+    
+        if (newAngle > 40)
+        {
+            IncreaseRollVelocity(moveInput);
+        }
 
-        if (moveInput > 0)
-        {
-            if (isRolling && rollAngle > 130.0f)
-            {
-                IncreaseRollVelocity(moveInput);
-            }
-        }
-        else if (moveInput < 0)
-        {
-            if (isRolling && (rollAngle > 50.0f && rollAngle < 80.0f))
-            {
-                IncreaseRollVelocity(moveInput);
-            }
-        }
+        // if (moveInput > 0)
+        // {
+        //     Debug.Log("I'm moving right??");
+        //     if (isRolling && rollAngle > 130.0f)
+        //     {
+        //         IncreaseRollVelocity(moveInput);
+        //     }
+        // }
+        // // moving left
+        // else if (moveInput < 0)
+        // {
+        //     if (isRolling && (rollAngle > 50.0f && rollAngle < 80.0f))
+        //     {
+        //         IncreaseRollVelocity(moveInput);
+        //     }
+        // }
 
         // animation transition
         animator.SetBool("Rolling", isRolling);
