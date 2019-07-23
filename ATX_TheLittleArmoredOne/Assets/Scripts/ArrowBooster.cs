@@ -6,7 +6,7 @@ public class ArrowBooster : MonoBehaviour
 {
     private float origSpeed;
     private float hyperSpeed = 30f;
-    
+
     private Color white = new Color (1f, 1f, 1f, 1f);
     private Color green = new Color (0f, 1f, 0f, 1f);
 
@@ -18,7 +18,6 @@ public class ArrowBooster : MonoBehaviour
         player = FindObjectOfType<Player>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         origSpeed = player.rollSpeed;
-        Debug.Log(spriteRenderer.color);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
