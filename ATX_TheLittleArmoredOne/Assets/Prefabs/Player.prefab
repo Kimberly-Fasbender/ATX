@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1024879794}
   - component: {fileID: 1024879796}
   - component: {fileID: 1024879799}
+  - component: {fileID: 878169923}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -90,7 +91,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -781882817
-  m_SortingLayer: 6
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 5108720401106071257, guid: 3058363dbadc14a27bc3cdbcd8d3a4d1,
     type: 3}
@@ -154,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02879095, y: -0.2720394}
+  m_Offset: {x: -0.005271435, y: -0.2720394}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3039856, y: 0.08690119}
+  m_Size: {x: 0.14021206, y: 0.08690119}
   m_EdgeRadius: 0
 --- !u!114 &1024879799
 MonoBehaviour:
@@ -180,5 +181,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
+  rollSpeed: 6
   jumpHeight: 3
   deathJump: {x: 0, y: 18}
+  jumpSFX: {fileID: 8300000, guid: c5c72c9d148914148b58cb97b97f7885, type: 3}
+  dieSFX: {fileID: 8300000, guid: 79daf67aa9761480bb39b4fd53eff333, type: 3}
+--- !u!58 &878169923
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80800157412224284}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.8677633, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.10989928

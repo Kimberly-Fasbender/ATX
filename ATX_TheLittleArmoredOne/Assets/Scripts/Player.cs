@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] public float rollSpeed = 8.5f;
     [SerializeField] float jumpHeight = 4.0f;
     [SerializeField] Vector2 deathJump = new Vector2 (0f, 18f);
+    [SerializeField] AudioClip jumpSFX;
+    [SerializeField] AudioClip dieSFX;
     float originOffset = 0.09f;
 
     // cached component references
@@ -16,6 +18,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     private CapsuleCollider2D bodyCollider;
     private BoxCollider2D feetCollider;
+    private AudioListener audioListener;
 
     // state
     private bool isAlive = true;
@@ -29,6 +32,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
+        audioListener = FindObjectOfType<AudioListener>();
 
         origCapsuleColliderOffset = new Vector2(bodyCollider.offset.x, bodyCollider.offset.y);
         origCapsuleColliderSize = new Vector2(bodyCollider.size.x, bodyCollider.size.y); 
@@ -84,8 +88,9 @@ public class Player : MonoBehaviour
         // full jump
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
+            AudioSource.PlayClipAtPoint(jumpSFX, audioListener.transform.position);
+            Debug.Log(audioListener.transform.position);
             rigidBody.velocity = jumpVelocity;
-
             animator.SetTrigger("TakingOff"); 
         }
         
@@ -129,6 +134,7 @@ public class Player : MonoBehaviour
         {
             isAlive = false;
         
+            AudioSource.PlayClipAtPoint(dieSFX, audioListener.transform.position);
             DeathDrama();
             StartCoroutine(DeathPause());
             animator.SetTrigger("Dying");

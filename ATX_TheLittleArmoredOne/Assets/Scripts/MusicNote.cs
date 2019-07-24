@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicNote : MonoBehaviour
 {
-    [SerializeField] public AudioClip musicNoteSFX;
+    [SerializeField] AudioClip musicNoteSFX;
 
     AudioListener audioListener;
 
