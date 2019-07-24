@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class MusicNote : MonoBehaviour
 {
-    [SerializeField] AudioClip musicNoteSFX;
-
-    AudioListener audioListener;
+    SFXController SFXController;
+    GameSession gameSession;
 
     int points = 1;
     bool isPickedUp = false;
 
+    void Start()
+    {
+        SFXController = FindObjectOfType<SFXController>();
+        gameSession = FindObjectOfType<GameSession>();
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isPickedUp)
         {
-            audioListener = FindObjectOfType<AudioListener>();
-
-            FindObjectOfType<GameSession>().AddPoints(points);
-            AudioSource.PlayClipAtPoint(musicNoteSFX, audioListener.transform.position);
+            gameSession.AddPoints(points);
+            SFXController.PlaySFX("music note", 1f);
             Destroy(gameObject);
             isPickedUp = true;
         }

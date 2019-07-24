@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
     [SerializeField] public float rollSpeed = 8.5f;
     [SerializeField] float jumpHeight = 4.0f;
     [SerializeField] Vector2 deathJump = new Vector2 (0f, 18f);
-    [SerializeField] AudioClip jumpSFX;
-    [SerializeField] AudioClip dieSFX;
     float originOffset = 0.09f;
 
     // cached component references
@@ -18,7 +16,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     private CapsuleCollider2D bodyCollider;
     private BoxCollider2D feetCollider;
-    private AudioListener audioListener;
+    private SFXController SFXController;
 
     // state
     private bool isAlive = true;
@@ -32,7 +30,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
-        audioListener = FindObjectOfType<AudioListener>();
+        SFXController = FindObjectOfType<SFXController>();
 
         origCapsuleColliderOffset = new Vector2(bodyCollider.offset.x, bodyCollider.offset.y);
         origCapsuleColliderSize = new Vector2(bodyCollider.size.x, bodyCollider.size.y); 
@@ -88,8 +86,7 @@ public class Player : MonoBehaviour
         // full jump
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
-            AudioSource.PlayClipAtPoint(jumpSFX, audioListener.transform.position);
-            Debug.Log(audioListener.transform.position);
+            SFXController.PlaySFX("jump", 0.5f);
             rigidBody.velocity = jumpVelocity;
             animator.SetTrigger("TakingOff"); 
         }
@@ -134,7 +131,6 @@ public class Player : MonoBehaviour
         {
             isAlive = false;
         
-            AudioSource.PlayClipAtPoint(dieSFX, audioListener.transform.position);
             DeathDrama();
             StartCoroutine(DeathPause());
             animator.SetTrigger("Dying");
@@ -145,6 +141,7 @@ public class Player : MonoBehaviour
 
     private void DeathDrama()
     {
+        SFXController.PlaySFX("die", 0.25f);
         rigidBody.velocity = deathJump;
         bodyCollider.enabled = false;
         feetCollider.enabled = false;
@@ -160,32 +157,13 @@ public class Player : MonoBehaviour
     private void Roll()
     { 
         bool isRolling = hit.normal.y < 0.9f;
-        // float rollAngle = Vector2.Angle(hit.point, hit.normal);
-        float newAngle = Vector2.Angle(hit.normal, Vector2.up);
-
+        float angle = Vector2.Angle(hit.normal, Vector2.up);
         float moveInput = Input.GetAxis("Horizontal"); 
     
-        if (newAngle > 40)
+        if (angle > 40)
         {
             IncreaseRollVelocity(moveInput);
         }
-
-        // if (moveInput > 0)
-        // {
-        //     Debug.Log("I'm moving right??");
-        //     if (isRolling && rollAngle > 130.0f)
-        //     {
-        //         IncreaseRollVelocity(moveInput);
-        //     }
-        // }
-        // // moving left
-        // else if (moveInput < 0)
-        // {
-        //     if (isRolling && (rollAngle > 50.0f && rollAngle < 80.0f))
-        //     {
-        //         IncreaseRollVelocity(moveInput);
-        //     }
-        // }
 
         // animation transition
         animator.SetBool("Rolling", isRolling);

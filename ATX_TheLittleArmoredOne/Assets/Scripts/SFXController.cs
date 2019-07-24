@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class SFXController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] AudioClip jumpSFX;
+    [SerializeField] AudioClip dieSFX;
+    [SerializeField] AudioClip musicNoteSFX;
+    [SerializeField] AudioClip thwompSFX;
+
+    AudioListener audioListener;
+    AudioClip currentSFX;
+
     void Start()
     {
-        
+        audioListener = GetComponent<AudioListener>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySFX(string clipName, float volume)
     {
-        
+        AssignAudioClip(clipName);
+        AudioSource.PlayClipAtPoint(currentSFX, audioListener.transform.position, volume);
+    }
+
+    private void AssignAudioClip(string clipName)
+    {
+        switch(clipName)
+        {
+            case "jump":
+                currentSFX = jumpSFX;
+                break;
+            case "die":
+                currentSFX = dieSFX;
+                break;
+            case "music note":
+                currentSFX = musicNoteSFX;
+                break;
+            case "thwomp":
+                currentSFX = thwompSFX;
+                break;
+        }
     }
 }
