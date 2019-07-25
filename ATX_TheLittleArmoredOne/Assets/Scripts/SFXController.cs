@@ -8,6 +8,7 @@ public class SFXController : MonoBehaviour
     [SerializeField] AudioClip jumpSFX;
     [SerializeField] AudioClip dieSFX;
     [SerializeField] AudioClip musicNoteSFX;
+    [SerializeField] AudioClip speedSFX;
     [SerializeField] AudioClip thwompSFX;
 
     AudioListener audioListener;
@@ -33,6 +34,9 @@ public class SFXController : MonoBehaviour
                 break;
             case "die":
                 currentSFX = dieSFX;
+                break;
+            case "speed":
+                currentSFX = speedSFX;
                 break;
             case "music note":
                 currentSFX = musicNoteSFX;
