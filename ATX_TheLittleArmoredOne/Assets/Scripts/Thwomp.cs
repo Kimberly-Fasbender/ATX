@@ -21,8 +21,6 @@ public class Thwomp : MonoBehaviour
         ground = LayerMask.GetMask("Ground");
         rigidBody = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<PolygonCollider2D>();
-        SFXController = FindObjectOfType<SFXController>();
-
         origPos = new Vector2 (transform.position.x, transform.position.y);
     }
 
@@ -42,6 +40,7 @@ public class Thwomp : MonoBehaviour
         }
         else if (collider2d.IsTouchingLayers(ground))
         {
+            SFXController = FindObjectOfType<SFXController>();
             SFXController.PlaySFX("thwomp", 1f);
             rigidBody.bodyType = RigidbodyType2D.Kinematic;
         }

@@ -182,10 +182,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSFX: {fileID: 8300000, guid: c5c72c9d148914148b58cb97b97f7885, type: 3}
-  dieSFX: {fileID: 0}
-  musicNoteSFX: {fileID: 0}
-  speedSFX: {fileID: 0}
-  thwompSFX: {fileID: 0}
+  dieSFX: {fileID: 8300000, guid: 79daf67aa9761480bb39b4fd53eff333, type: 3}
+  musicNoteSFX: {fileID: 8300000, guid: 550c54237c1a7487eb58c164e70f8ae4, type: 3}
+  speedSFX: {fileID: 8300000, guid: af3244797182646d78148f04d617c520, type: 3}
+  thwompSFX: {fileID: 8300000, guid: 0de7cda3d3e6f4d6da9da1ec3fe3b5d5, type: 3}
 --- !u!4 &204068483
 Transform:
   m_ObjectHideFlags: 0

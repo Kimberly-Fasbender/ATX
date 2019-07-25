@@ -12,7 +12,6 @@ public class MusicNote : MonoBehaviour
 
     void Start()
     {
-        SFXController = FindObjectOfType<SFXController>();
         gameSession = FindObjectOfType<GameSession>();
     }
 
@@ -21,6 +20,7 @@ public class MusicNote : MonoBehaviour
         if (!isPickedUp)
         {
             gameSession.AddPoints(points);
+            SFXController = FindObjectOfType<SFXController>();
             SFXController.PlaySFX("music note", 1f);
             Destroy(gameObject);
             isPickedUp = true;

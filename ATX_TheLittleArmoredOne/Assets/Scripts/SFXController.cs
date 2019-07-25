@@ -5,14 +5,15 @@ using UnityEngine;
 public class SFXController : MonoBehaviour
 {
 
-    [SerializeField] AudioClip jumpSFX;
-    [SerializeField] AudioClip dieSFX;
-    [SerializeField] AudioClip musicNoteSFX;
-    [SerializeField] AudioClip speedSFX;
-    [SerializeField] AudioClip thwompSFX;
+    [SerializeField] public AudioClip jumpSFX;
+    [SerializeField] public AudioClip dieSFX;
+    [SerializeField] public AudioClip musicNoteSFX;
+    [SerializeField] public AudioClip speedSFX;
+    [SerializeField] public AudioClip thwompSFX;
 
     AudioListener audioListener;
     AudioClip currentSFX;
+    // AudioSource audioSource;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class SFXController : MonoBehaviour
     }
 
     public void PlaySFX(string clipName, float volume)
-    {
+    {   
         AssignAudioClip(clipName);
         AudioSource.PlayClipAtPoint(currentSFX, audioListener.transform.position, volume);
     }

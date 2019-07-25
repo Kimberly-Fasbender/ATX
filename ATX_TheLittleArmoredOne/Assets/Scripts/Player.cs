@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
-        SFXController = FindObjectOfType<SFXController>();
 
         origCapsuleColliderOffset = new Vector2(bodyCollider.offset.x, bodyCollider.offset.y);
         origCapsuleColliderSize = new Vector2(bodyCollider.size.x, bodyCollider.size.y); 
@@ -86,6 +85,8 @@ public class Player : MonoBehaviour
         // full jump
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
+            SFXController = FindObjectOfType<SFXController>();
+            Debug.Log(SFXController);
             SFXController.PlaySFX("jump", 0.5f);
             rigidBody.velocity = jumpVelocity;
             animator.SetTrigger("TakingOff"); 
@@ -141,6 +142,7 @@ public class Player : MonoBehaviour
 
     private void DeathDrama()
     {
+        SFXController = FindObjectOfType<SFXController>();
         SFXController.PlaySFX("die", 0.25f);
         rigidBody.velocity = deathJump;
         bodyCollider.enabled = false;

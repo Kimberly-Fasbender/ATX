@@ -17,7 +17,6 @@ public class ArrowBooster : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
-        SFXController = FindObjectOfType<SFXController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         
         origSpeed = player.rollSpeed;
@@ -32,6 +31,7 @@ public class ArrowBooster : MonoBehaviour
     {
         player.rollSpeed = hyperSpeed;
         spriteRenderer.color = green;
+        SFXController = FindObjectOfType<SFXController>();
         SFXController.PlaySFX("speed", 0.5f);
 
         yield return new WaitForSeconds(1f);
