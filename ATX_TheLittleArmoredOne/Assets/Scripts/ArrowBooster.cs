@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ArrowBooster : MonoBehaviour
 {
+    [SerializeField] AudioClip speedSFX;
     private float origSpeed;
     private float hyperSpeed = 30f;
 
@@ -12,12 +13,13 @@ public class ArrowBooster : MonoBehaviour
 
     Player player;
     SpriteRenderer spriteRenderer;
-    SFXController SFXController;
+    AudioListener audioListener;
 
     void Start()
     {
         player = FindObjectOfType<Player>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioListener = FindObjectOfType<AudioListener>();
         
         origSpeed = player.rollSpeed;
     }
@@ -31,8 +33,9 @@ public class ArrowBooster : MonoBehaviour
     {
         player.rollSpeed = hyperSpeed;
         spriteRenderer.color = green;
-        SFXController = FindObjectOfType<SFXController>();
-        SFXController.PlaySFX("speed", 0.5f);
+        AudioSource.PlayClipAtPoint(speedSFX, audioListener.transform.position, 0.3f);
+        // SFXController = FindObjectOfType<SFXController>();
+        // SFXController.PlaySFX("speed", 0.5f);
 
         yield return new WaitForSeconds(1f);
 

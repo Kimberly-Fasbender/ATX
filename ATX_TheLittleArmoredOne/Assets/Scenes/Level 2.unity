@@ -6749,7 +6749,7 @@ PrefabInstance:
     - target: {fileID: 1600941185536232868, guid: 5156fb19998f746d7bd7a7ba93a8d47d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.26
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 1600941185536232868, guid: 5156fb19998f746d7bd7a7ba93a8d47d,
         type: 3}
@@ -6814,6 +6814,10 @@ PrefabInstance:
     - target: {fileID: 6988384874754429, guid: c4cb700bd0d6e4e32a8344b174d5852d, type: 3}
       propertyPath: m_Name
       value: Game Session
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988384874754429, guid: c4cb700bd0d6e4e32a8344b174d5852d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6988384874754431, guid: c4cb700bd0d6e4e32a8344b174d5852d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6958,7 +6962,7 @@ PrefabInstance:
     - target: {fileID: 1600941185536232868, guid: 5156fb19998f746d7bd7a7ba93a8d47d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 1600941185536232868, guid: 5156fb19998f746d7bd7a7ba93a8d47d,
         type: 3}

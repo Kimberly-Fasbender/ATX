@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Thwomp : MonoBehaviour
 {
+    [SerializeField] AudioClip thwompSFX;
     private int player;
     private int ground;
     private float resetSpeed = 5.0f;
@@ -12,7 +13,7 @@ public class Thwomp : MonoBehaviour
     private RaycastHit2D hit;
     private Rigidbody2D rigidBody;
     private Collider2D collider2d;
-    private SFXController SFXController;
+    private AudioListener audioListener;
     
 
     void Start()
@@ -21,6 +22,7 @@ public class Thwomp : MonoBehaviour
         ground = LayerMask.GetMask("Ground");
         rigidBody = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<PolygonCollider2D>();
+        audioListener = FindObjectOfType<AudioListener>();
         origPos = new Vector2 (transform.position.x, transform.position.y);
     }
 
@@ -40,8 +42,7 @@ public class Thwomp : MonoBehaviour
         }
         else if (collider2d.IsTouchingLayers(ground))
         {
-            SFXController = FindObjectOfType<SFXController>();
-            SFXController.PlaySFX("thwomp", 1f);
+            AudioSource.PlayClipAtPoint(thwompSFX, audioListener.transform.position);
             rigidBody.bodyType = RigidbodyType2D.Kinematic;
         }
         else if (gameObject.transform.position.y < origPos.y)
