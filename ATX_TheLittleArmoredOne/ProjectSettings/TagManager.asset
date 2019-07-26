@@ -60,6 +60,9 @@ TagManager:
   - name: Interactables
     uniqueID: 4082040105
     locked: 0
+  - name: Breakable Tiles
+    uniqueID: 3404992427
+    locked: 0
   - name: Secrets
     uniqueID: 4223244911
     locked: 0

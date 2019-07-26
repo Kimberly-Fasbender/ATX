@@ -91,7 +91,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -781882817
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 5108720401106071257, guid: 3058363dbadc14a27bc3cdbcd8d3a4d1,
     type: 3}
@@ -182,10 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   rollSpeed: 6
-  jumpHeight: 3
+  jumpHeight: 3.4
   deathJump: {x: 0, y: 18}
   jumpSFX: {fileID: 8300000, guid: c5c72c9d148914148b58cb97b97f7885, type: 3}
   dieSFX: {fileID: 8300000, guid: 79daf67aa9761480bb39b4fd53eff333, type: 3}
+  isAlive: 1
 --- !u!58 &878169923
 CircleCollider2D:
   m_ObjectHideFlags: 0
