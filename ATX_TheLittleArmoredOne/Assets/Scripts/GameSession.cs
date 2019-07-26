@@ -20,20 +20,12 @@ public class GameSession : MonoBehaviour
 
         if (numOfSessions > 1)
         {
-            Debug.Log($"I'm destroying a Game Object with livesText {livesText.text}");
             Destroy(gameObject);
         }
         else 
         {
-            Debug.Log($"I am SAVING a gameSession with livesText {livesText.text}");
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    void Update()
-    {
-        Debug.Log($"Lives: {livesText.text}");
-        Debug.Log($"Score: {scoreText.text}");
     }
 
     void OnEnable()
@@ -50,7 +42,6 @@ public class GameSession : MonoBehaviour
     {
         if (scene.name == "Main Menu")
         {
-            Debug.Log("WOAH NELLY, WHY ARE WE IN HERE?!");
             Destroy(gameObject);
         }
     }
@@ -59,7 +50,6 @@ public class GameSession : MonoBehaviour
     {
         livesText.text = playerLives.ToString();
         scoreText.text = playerScore.ToString();
-        Debug.Log("I've set the test for the lives score!");
     }
 
     public void ArrangePlayerFuneral()
@@ -95,15 +85,12 @@ public class GameSession : MonoBehaviour
 
         if (scene == 0)
         {
-            Debug.Log("AGAIN, DON'T BE IN HERE, BETTER NOT!!");
             Destroy(gameObject);
         }
     }
 
     public void AddPoints(int points)
     {
-        Debug.Log("Text in GameSession");
-        Debug.Log(scoreText.text);
         playerScore += points;
         scoreText.text = playerScore.ToString();
     }

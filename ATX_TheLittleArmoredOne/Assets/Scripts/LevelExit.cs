@@ -8,10 +8,20 @@ public class LevelExit : MonoBehaviour
     float levelLoadDelay = 1.5f;
     float slowMotionExit = 0.2f;
 
+    Player player;
+
     
-    void OnTriggerEnter2D(Collider2D collision)
+    void Start()
     {
-        StartCoroutine(LoadNextLevel());
+        player = FindObjectOfType<Player>();
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {   
+        if (collision != player.GetComponent<CircleCollider2D>())
+        {
+            StartCoroutine(LoadNextLevel());
+        }
     }
 
     IEnumerator LoadNextLevel()
