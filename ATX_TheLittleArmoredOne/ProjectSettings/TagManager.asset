@@ -60,6 +60,9 @@ TagManager:
   - name: Interactables
     uniqueID: 4082040105
     locked: 0
+  - name: Secrets
+    uniqueID: 4223244911
+    locked: 0
   - name: Hazards
     uniqueID: 3891244711
     locked: 0
