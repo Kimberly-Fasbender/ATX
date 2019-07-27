@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
 
     // state
     public bool isAlive = true;
+    public bool isJumping = false;
     private Vector2 origCapsuleColliderOffset;
     private Vector2 origCapsuleColliderSize;
     private RaycastHit2D hit; 
@@ -82,13 +83,16 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         LayerMask ground = LayerMask.GetMask("Ground");
+        
         bool isTouchingGround = feetCollider.IsTouchingLayers(ground);
+        
         Vector2 jumpVelocity = new Vector2(0, 
                 Mathf.Sqrt(-2.0f * Physics2D.gravity.y * jumpHeight));
 
         // full jump
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
+            isJumping = true;
             AudioSource.PlayClipAtPoint(jumpSFX, audioListener.transform.position, 0.4f);
             // SFXController = FindObjectOfType<SFXController>();
             // SFXController.PlaySFX("jump", 0.5f);
@@ -97,11 +101,12 @@ public class Player : MonoBehaviour
         }
         
         // early release jump
-        else if (Input.GetButtonUp("Jump"))
+        else if (Input.GetButtonUp("Jump") && isJumping)
         {
             if (rigidBody.velocity.y > 0)
             {
                 rigidBody.velocity = new Vector2(0, rigidBody.velocity.y * 0.333f);
+                isJumping = false;
             }
         }
 
