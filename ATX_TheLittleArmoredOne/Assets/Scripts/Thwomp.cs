@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Thwomp : MonoBehaviour
 {
-    [SerializeField] AudioClip thwompSFX;
+    [SerializeField] public AudioClip thwompSFX;
     private int player;
     private int ground;
     private float resetSpeed = 5.0f;

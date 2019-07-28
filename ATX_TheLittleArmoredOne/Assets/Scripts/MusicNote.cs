@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicNote : MonoBehaviour
 {
-    [SerializeField] AudioClip musicNoteSFX;
+    [SerializeField] public AudioClip musicNoteSFX;
 
     int points = 1;
     bool isPickedUp = false;

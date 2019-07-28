@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Audio Listener
+  - Queso
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Hazards
   - Thwomp
   - Flower
-  - 
+  - Queso
   - 
   - 
   - 
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: Midground
     uniqueID: 632561551
+    locked: 0
+  - name: Queso
+    uniqueID: 3953279273
     locked: 0
   - name: Foreground
     uniqueID: 3639045603

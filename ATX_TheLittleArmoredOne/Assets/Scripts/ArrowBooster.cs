@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowBooster : MonoBehaviour
 {
-    [SerializeField] AudioClip speedSFX;
+    [SerializeField] public AudioClip speedSFX;
     private float origSpeed;
     private float hyperSpeed = 30f;
 

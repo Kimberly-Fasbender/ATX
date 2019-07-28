@@ -9,24 +9,26 @@ public class Player : MonoBehaviour
     [SerializeField] public float rollSpeed = 8.5f;
     [SerializeField] float jumpHeight = 4.0f;
     [SerializeField] Vector2 deathJump = new Vector2 (0f, 18f);
-    [SerializeField] AudioClip jumpSFX;
-    [SerializeField] AudioClip dieSFX;
+    [SerializeField] public AudioClip jumpSFX;
+    [SerializeField] public AudioClip dieSFX;
     float originOffset = 0.09f;
 
     // cached component references
     private Rigidbody2D rigidBody;
-
     private Animator animator;
     private CapsuleCollider2D bodyCollider;
     private BoxCollider2D feetCollider;
     private AudioListener audioListener;
+    private LayerMask ground;
+    private CompositeCollider2D queso;
+
 
     // state
     public bool isAlive = true;
     public bool isJumping = false;
     private Vector2 origCapsuleColliderOffset;
     private Vector2 origCapsuleColliderSize;
-    private RaycastHit2D hit; 
+    private RaycastHit2D hit;
 
     void Start()
     {
@@ -35,6 +37,8 @@ public class Player : MonoBehaviour
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
         audioListener = FindObjectOfType<AudioListener>();
+        ground = LayerMask.GetMask("Ground");
+        queso = GameObject.FindWithTag("Queso").GetComponent<CompositeCollider2D>();
 
         origCapsuleColliderOffset = new Vector2(bodyCollider.offset.x, bodyCollider.offset.y);
         origCapsuleColliderSize = new Vector2(bodyCollider.size.x, bodyCollider.size.y); 
@@ -48,6 +52,7 @@ public class Player : MonoBehaviour
         Jump();
         Roll();
         UpdateCapsuleCollider();
+        Slide();
         Die();
 
         // need to fix (always to the right when standing still...)
@@ -81,9 +86,7 @@ public class Player : MonoBehaviour
     }
 
     private void Jump()
-    {
-        LayerMask ground = LayerMask.GetMask("Ground");
-        
+    {   
         bool isTouchingGround = feetCollider.IsTouchingLayers(ground);
         
         Vector2 jumpVelocity = new Vector2(0, 
@@ -168,6 +171,7 @@ public class Player : MonoBehaviour
 
     private void Roll()
     { 
+        bool isTouchingGround = feetCollider.IsTouchingLayers(ground);
         bool isRolling = hit.normal.y < 0.9f;
         float angle = Vector2.Angle(hit.normal, Vector2.up);
         float moveInput = Input.GetAxis("Horizontal"); 
@@ -185,5 +189,23 @@ public class Player : MonoBehaviour
     {
         Vector2 playVelocity = new Vector2(moveInput * rollSpeed, rigidBody.velocity.y);
         rigidBody.velocity = playVelocity;
+    }
+
+    private void Slide()
+    {
+        bool isFacingRight = transform.localScale.x > 0;
+        // CompositeCollider2D queso = GameObject.FindWithTag("Queso").GetComponent<CompositeCollider2D>();
+
+        if (feetCollider.IsTouching(queso))
+        {
+            if (isFacingRight)
+            {
+                rigidBody.AddForce(Vector2.right * 100);
+            }
+            else
+            {
+                rigidBody.AddForce(Vector2.left * 100);
+            }
+        }
     }
 }
