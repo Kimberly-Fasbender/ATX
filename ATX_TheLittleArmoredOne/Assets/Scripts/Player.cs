@@ -88,6 +88,7 @@ public class Player : MonoBehaviour
     private void Jump()
     {   
         bool isTouchingGround = feetCollider.IsTouchingLayers(ground);
+        Debug.Log($"Is Touching Ground: {isTouchingGround}");
         
         Vector2 jumpVelocity = new Vector2(0, 
                 Mathf.Sqrt(-2.0f * Physics2D.gravity.y * jumpHeight));
@@ -122,6 +123,7 @@ public class Player : MonoBehaviour
         // updating shape of capsule collider depending on if ball shaped or not
         if (animator.GetBool("Jumping") || animator.GetBool("Rolling"))
         {
+            Debug.Log("Is this why I'm a ball?....UPDATING COLLIDER");
             bodyCollider.offset = new Vector2(-0.005f, 0.005f);
             bodyCollider.size = new Vector2(0.0001f, 0.45f);
         } 
@@ -198,14 +200,17 @@ public class Player : MonoBehaviour
 
         if (feetCollider.IsTouching(queso))
         {
-            if (isFacingRight)
-            {
-                rigidBody.AddForce(Vector2.right * 100);
-            }
-            else
-            {
-                rigidBody.AddForce(Vector2.left * 100);
-            }
+            rigidBody.AddForce(Vector2.right * 100);
+            // if (isFacingRight)
+            // {
+            //     // rigidBody.velocity = new Vector2(rigidBody.velocity.x + 3f, rigidBody.velocity.y);
+            //     rigidBody.AddForce(Vector2.right * 100);
+            // }
+            // else
+            // {
+            //     // rigidBody.velocity = new Vector2(rigidBody.velocity.x - 3f, rigidBody.velocity.y);
+            //     rigidBody.AddForce(Vector2.left * 100);
+            // }
         }
     }
 }

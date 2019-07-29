@@ -13,6 +13,7 @@ public class GameSession : MonoBehaviour
 
     float levelResetDelay = 1.5f;
     int startScreenIndex = 0;
+    int loseScreenIndex = 5;
 
     void Awake()
     {
@@ -42,6 +43,7 @@ public class GameSession : MonoBehaviour
     {
         if (scene.name == "Main Menu")
         {
+            Debug.Log("Destroying Game Session...in OnLevelLoaded function");
             Destroy(gameObject);
         }
     }
@@ -60,7 +62,8 @@ public class GameSession : MonoBehaviour
         }
         else
         {
-            ResetGameSession();
+            LoadLoseScreen();
+            // ResetGameSession();
         }
     }
 
@@ -73,9 +76,16 @@ public class GameSession : MonoBehaviour
         livesText.text = playerLives.ToString();
     }
 
-    private void ResetGameSession()
+    private void LoadLoseScreen()
     {
-        StartCoroutine(SceneLoadDelay(startScreenIndex));
+        StartCoroutine(SceneLoadDelay(loseScreenIndex));
+    }
+
+    public void ResetGameSession()
+    {
+        Debug.Log("Deleting Game Session in ResetGameSession function...");
+        Destroy(gameObject);
+        // StartCoroutine(SceneLoadDelay(startScreenIndex));
     }
 
     IEnumerator SceneLoadDelay(int scene)
@@ -83,10 +93,10 @@ public class GameSession : MonoBehaviour
         yield return new WaitForSeconds(levelResetDelay);
         SceneManager.LoadScene(scene);
 
-        if (scene == 0)
-        {
-            Destroy(gameObject);
-        }
+        // if (scene == 0)
+        // {
+        //     Destroy(gameObject);
+        // }
     }
 
     public void AddPoints(int points)
