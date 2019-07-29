@@ -200,17 +200,30 @@ public class Player : MonoBehaviour
 
         if (feetCollider.IsTouching(queso))
         {
-            rigidBody.AddForce(Vector2.right * 100);
-            // if (isFacingRight)
-            // {
-            //     // rigidBody.velocity = new Vector2(rigidBody.velocity.x + 3f, rigidBody.velocity.y);
-            //     rigidBody.AddForce(Vector2.right * 100);
-            // }
-            // else
-            // {
-            //     // rigidBody.velocity = new Vector2(rigidBody.velocity.x - 3f, rigidBody.velocity.y);
-            //     rigidBody.AddForce(Vector2.left * 100);
-            // }
+            PhysicsMaterial2D zeroFriction = bodyCollider.sharedMaterial;
+            feetCollider.sharedMaterial = zeroFriction;
+            // rigidBody.AddForce(Vector2.right * 75);
+            if (isFacingRight)
+            {
+                // rigidBody.velocity = new Vector2(rigidBody.velocity.x + 3f, rigidBody.velocity.y);
+                rigidBody.AddForce(Vector2.right * 100);
+            }
+            else
+            {
+                // rigidBody.velocity = new Vector2(rigidBody.velocity.x - 3f, rigidBody.velocity.y);
+                rigidBody.AddForce(Vector2.left * 100);
+            }
+        }
+        else
+        {
+            PhysicsMaterial2D none = GetComponent<CircleCollider2D>().sharedMaterial;
+            Debug.Log(none);
+            feetCollider.sharedMaterial = none;
         }
     }
+
+    // IEnumerator SlideTimer()
+    // {
+
+    // }
 }
