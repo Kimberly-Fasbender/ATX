@@ -104,4 +104,10 @@ public class GameSession : MonoBehaviour
         playerScore += points;
         scoreText.text = playerScore.ToString();
     }
+
+    public void AddLives(int lives)
+    {
+        playerLives += lives;
+        livesText.text = playerLives.ToString();
+    }
 }

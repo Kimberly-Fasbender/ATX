@@ -206,24 +206,19 @@ public class Player : MonoBehaviour
             if (isFacingRight)
             {
                 // rigidBody.velocity = new Vector2(rigidBody.velocity.x + 3f, rigidBody.velocity.y);
-                rigidBody.AddForce(Vector2.right * 100);
+                if (rigidBody.velocity.x < 0.5f)
+                {
+                    rigidBody.AddForce(Vector2.right * 100);
+                }
             }
             else
             {
-                // rigidBody.velocity = new Vector2(rigidBody.velocity.x - 3f, rigidBody.velocity.y);
-                rigidBody.AddForce(Vector2.left * 100);
+                if (rigidBody.velocity.x < 0.5f)
+                {
+                    // rigidBody.velocity = new Vector2(rigidBody.velocity.x - 3f, rigidBody.velocity.y);
+                    rigidBody.AddForce(Vector2.left * 100);
+                }
             }
         }
-        else
-        {
-            PhysicsMaterial2D none = GetComponent<CircleCollider2D>().sharedMaterial;
-            Debug.Log(none);
-            feetCollider.sharedMaterial = none;
-        }
     }
-
-    // IEnumerator SlideTimer()
-    // {
-
-    // }
 }
