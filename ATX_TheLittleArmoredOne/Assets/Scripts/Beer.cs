@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Beer : MonoBehaviour
 {
-    // [SerializeField] public AudioClip musicNoteSFX;
+    [SerializeField] public AudioClip extraLifeSFX;
 
     int lives = 1;
     bool isPickedUp = false;
@@ -20,7 +20,7 @@ public class Beer : MonoBehaviour
         {
             GameSession gameSession = FindObjectOfType<GameSession>();
             gameSession.AddLives(lives);
-            // AudioSource.PlayClipAtPoint(musicNoteSFX, audioListener.transform.position);
+            AudioSource.PlayClipAtPoint(extraLifeSFX, audioListener.transform.position);
             Destroy(gameObject);
             isPickedUp = true;
         }

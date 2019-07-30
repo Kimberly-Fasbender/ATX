@@ -65,7 +65,6 @@ public class GameSession : MonoBehaviour
             playerLives -= 1;
             livesText.text = playerLives.ToString();
             LoadLoseScreen();
-            // ResetGameSession();
         }
     }
 
@@ -85,20 +84,13 @@ public class GameSession : MonoBehaviour
 
     public void ResetGameSession()
     {
-        Debug.Log("Deleting Game Session in ResetGameSession function...");
         Destroy(gameObject);
-        // StartCoroutine(SceneLoadDelay(startScreenIndex));
     }
 
     IEnumerator SceneLoadDelay(int scene)
     {
         yield return new WaitForSeconds(levelResetDelay);
         SceneManager.LoadScene(scene);
-
-        // if (scene == 0)
-        // {
-        //     Destroy(gameObject);
-        // }
     }
 
     public void AddPoints(int points)

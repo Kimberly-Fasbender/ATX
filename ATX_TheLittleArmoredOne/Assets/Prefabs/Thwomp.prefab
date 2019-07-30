@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f0535a2aaff4251ac998987c4532c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thwompSFX: {fileID: 0}
+  thwompSFX: {fileID: 8300000, guid: 0de7cda3d3e6f4d6da9da1ec3fe3b5d5, type: 3}
 --- !u!50 &4907170057606333992
 Rigidbody2D:
   serializedVersion: 4
