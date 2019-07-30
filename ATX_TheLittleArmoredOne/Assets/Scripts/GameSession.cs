@@ -12,7 +12,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] public Text scoreText;
 
     float levelResetDelay = 1.5f;
-    int startScreenIndex = 0;
+    // int startScreenIndex = 0;
     int loseScreenIndex = 5;
 
     void Awake()
@@ -62,6 +62,8 @@ public class GameSession : MonoBehaviour
         }
         else
         {
+            playerLives -= 1;
+            livesText.text = playerLives.ToString();
             LoadLoseScreen();
             // ResetGameSession();
         }

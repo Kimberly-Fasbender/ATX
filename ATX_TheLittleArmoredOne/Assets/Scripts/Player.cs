@@ -88,7 +88,6 @@ public class Player : MonoBehaviour
     private void Jump()
     {   
         bool isTouchingGround = feetCollider.IsTouchingLayers(ground);
-        Debug.Log($"Is Touching Ground: {isTouchingGround}");
         
         Vector2 jumpVelocity = new Vector2(0, 
                 Mathf.Sqrt(-2.0f * Physics2D.gravity.y * jumpHeight));
@@ -123,7 +122,6 @@ public class Player : MonoBehaviour
         // updating shape of capsule collider depending on if ball shaped or not
         if (animator.GetBool("Jumping") || animator.GetBool("Rolling"))
         {
-            Debug.Log("Is this why I'm a ball?....UPDATING COLLIDER");
             bodyCollider.offset = new Vector2(-0.005f, 0.005f);
             bodyCollider.size = new Vector2(0.0001f, 0.45f);
         } 
@@ -195,30 +193,58 @@ public class Player : MonoBehaviour
 
     private void Slide()
     {
+        bool isRunning = false;
         bool isFacingRight = transform.localScale.x > 0;
-        // CompositeCollider2D queso = GameObject.FindWithTag("Queso").GetComponent<CompositeCollider2D>();
 
         if (feetCollider.IsTouching(queso))
         {
+            if (Input.GetButtonDown("Horizontal"))
+            {
+                isRunning = true;
+            }
+            else if (Input.GetButtonUp("Horizontal"))
+            {
+                isRunning = false;
+            }
+
             PhysicsMaterial2D zeroFriction = bodyCollider.sharedMaterial;
             feetCollider.sharedMaterial = zeroFriction;
+
             // rigidBody.AddForce(Vector2.right * 75);
-            if (isFacingRight)
+            if (isFacingRight && !isRunning)
             {
+                Debug.Log("I'm in here...");
                 // rigidBody.velocity = new Vector2(rigidBody.velocity.x + 3f, rigidBody.velocity.y);
-                if (rigidBody.velocity.x < 0.5f)
-                {
-                    rigidBody.AddForce(Vector2.right * 100);
-                }
+                rigidBody.AddForce(Vector2.right * 100);
+                // StartCoroutine(SlideEffect("right"));
             }
-            else
+            else if (!isFacingRight && !isRunning)
             {
-                if (rigidBody.velocity.x < 0.5f)
-                {
-                    // rigidBody.velocity = new Vector2(rigidBody.velocity.x - 3f, rigidBody.velocity.y);
-                    rigidBody.AddForce(Vector2.left * 100);
-                }
-            }
+                // rigidBody.velocity = new Vector2(rigidBody.velocity.x - 3f, rigidBody.velocity.y);
+                rigidBody.AddForce(Vector2.left * 100);
+            //    StartCoroutine(SlideEffect("left"));
+            } 
         }
+    }
+
+    IEnumerator SlideEffect(string direction)
+    {
+        if (direction == "right")
+        {
+            rigidBody.AddForce(Vector2.right * 100);
+            // rigidBody.velocity = new Vector2(rigidBody.velocity.x + 2.0f, rigidBody.velocity.y);
+            Debug.Log($"adding force to the right: {rigidBody.velocity}");
+        }
+        else if (direction == "left")
+        {
+            rigidBody.AddForce(Vector2.left * 100);
+            // rigidBody.velocity = new Vector2(rigidBody.velocity.x - 2.0f, rigidBody.velocity.y);
+            Debug.Log($"adding force to the left: {rigidBody.velocity}");
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        rigidBody.velocity = new Vector2(0f, 0f);
+        Debug.Log($"ALL DONE WITH SLIDING EFFECT, {rigidBody.velocity}");
     }
 }

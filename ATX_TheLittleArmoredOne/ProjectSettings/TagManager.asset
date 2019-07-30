@@ -58,11 +58,11 @@ TagManager:
   - name: Environment
     uniqueID: 1209378993
     locked: 0
-  - name: Enemy
-    uniqueID: 654971323
-    locked: 0
   - name: Interactables
     uniqueID: 4082040105
+    locked: 0
+  - name: Enemy
+    uniqueID: 654971323
     locked: 0
   - name: Breakable Tiles
     uniqueID: 3404992427
