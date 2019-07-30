@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelExit : MonoBehaviour
 {
-    [SerializeField] AudioClip levelExitSFX;
+    [SerializeField] public AudioClip levelExitSFX;
     float levelLoadDelay = 1.5f;
     float slowMotionExit = 0.2f;
     float origVolume;
@@ -28,6 +28,7 @@ public class LevelExit : MonoBehaviour
     {   
         if (collision != player.GetComponent<CircleCollider2D>())
         {
+            ExitSFX();
             StartCoroutine(LoadNextLevel());
         }
     }
@@ -35,14 +36,18 @@ public class LevelExit : MonoBehaviour
     IEnumerator LoadNextLevel()
     {
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        
-        audioSource.volume = 0f;
-        AudioSource.PlayClipAtPoint(levelExitSFX, audioListener.transform.position, 0.1f);
+
         Time.timeScale = slowMotionExit;
         yield return new WaitForSecondsRealtime(levelLoadDelay);
         Time.timeScale = 1f;
-        
+
         SceneManager.LoadScene(currentSceneIndex + 1);
         audioSource.volume = origVolume;
+    }
+
+    private void ExitSFX()
+    {
+        audioSource.volume = 0f;
+        AudioSource.PlayClipAtPoint(levelExitSFX, audioListener.transform.position, 0.1f);
     }
 }
