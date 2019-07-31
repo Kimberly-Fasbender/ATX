@@ -5,13 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    GameSession gameSession;
-
-    void Start()
-    {
-        gameSession = FindObjectOfType<GameSession>();
-    }
-
     public void LoadFirstLevel()
     {
         SceneManager.LoadScene(1);
@@ -19,7 +12,11 @@ public class Menu : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        // gameSession.ResetGameSession();
         SceneManager.LoadScene(0);
+    }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene(6);
     }
 }
