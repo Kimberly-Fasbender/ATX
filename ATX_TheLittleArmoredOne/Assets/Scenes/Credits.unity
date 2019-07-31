@@ -871,11 +871,9 @@ MonoBehaviour:
     by Yubatake\nhttps://opengameart.org/content/armadillo\n\nGone Fishin by Memoraphile
     @ Youre Perfect Studios\nhttps://opengameart.org/content/gone-fishin\n\nJump Higher
     Run Faster by bart\nhttps://opengameart.org/content/jump-higher-run-faster-jump-run-miniboss-mix\n\nmegaPixelMusic
-    -https://soundcloud.com/megapixelmusic \n\n\n\n\n\nLloydEvens09\nhttps://freesound.org/people/LloydEvans09/sounds/187025/\n\ncabled_mess\nhttps://freesound.org/people/cabled_mess/sounds/371451/\n\nFarfadet46\nhttps://opengameart.org/content/bubbles-pop\n\nBEER
-    SFX ATTRIBUTION\n\n\nmoogy73\nhttps://freesound.org/people/moogy73/sounds/425695/\n\nBoing
+    -https://soundcloud.com/megapixelmusic \n\n\n\n\n\nLloydEvens09\nhttps://freesound.org/people/LloydEvans09/sounds/187025/\n\ncabled_mess\nhttps://freesound.org/people/cabled_mess/sounds/371451/\n\nFarfadet46\nhttps://opengameart.org/content/bubbles-pop\n\nKeshaFilm\nhttps://freesound.org/people/KeshaFilm/sounds/471834/\n\nmoogy73\nhttps://freesound.org/people/moogy73/sounds/425695/\n\nBoing
     Raw Copyright 2005 cfork\nhttp://freesound.org/people/cfork/ \nBoing Jump Copyright
-    2012 Iwan Gabovitch\nhttp://qubodup.net\n\nMentalSanityOff\nhttps://opengameart.org/content/jump-landing-sound\n\nTuudurt\nhttps://freesound.org/people/Tuudurt/sounds/258142/\n\nBREAKABLE
-    TILE SFX ATTRIBUTION\n"
+    2012 Iwan Gabovitch\nhttp://qubodup.net\n\nMentalSanityOff\nhttps://opengameart.org/content/jump-landing-sound\n\nTuudurt\nhttps://freesound.org/people/Tuudurt/sounds/258142/\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -944,12 +942,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 713254716}
-    characterCount: 2808
+    characterCount: 2819
     spriteCount: 0
-    spaceCount: 218
-    wordCount: 317
+    spaceCount: 212
+    wordCount: 318
     linkCount: 0
-    lineCount: 102
+    lineCount: 101
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1863,7 +1861,7 @@ MonoBehaviour:
     Buttons\n\n\nMusic Notes\n\n\nSpeed Boost Arrows\n\n\n\n\n\n\nMain Menu Music\n\n\nLevel
     Music\n\n\nSuccess Screen Music\n\n\nLose Screen Music\n\n\n\n\n\nJumping\n\n\nDying\n\n\nMusic
     Notes\n\n\nBeer\n\n\nSpeed Boost\n\n\nFlower Bounce\n\n\n\n\nThwomp\n\n\nLevel
-    Exit\n\n\nBreaking Tile"
+    Exit"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1932,12 +1930,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 1267.9595, w: 0}
   m_textInfo:
     textComponent: {fileID: 1376639891}
-    characterCount: 399
+    characterCount: 383
     spriteCount: 0
-    spaceCount: 120
-    wordCount: 51
+    spaceCount: 116
+    wordCount: 49
     linkCount: 0
-    lineCount: 102
+    lineCount: 99
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1bb38562ce143eb9e8e86dceaa3c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extraLifeSFX: {fileID: 8300000, guid: 5dc87eb5b4b374b2db3442307f3a49ec, type: 3}
+  extraLifeSFX: {fileID: 8300000, guid: b65e02fb357d14cf3bc90723b78f7b7e, type: 3}
 --- !u!60 &228679247244066379
 PolygonCollider2D:
   m_ObjectHideFlags: 0

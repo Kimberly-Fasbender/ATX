@@ -6,7 +6,7 @@ public class MusicNote : MonoBehaviour
 {
     [SerializeField] public AudioClip musicNoteSFX;
 
-    int points = 1;
+    int points = 100;
     bool isPickedUp = false;
 
     void OnTriggerEnter2D(Collider2D collision)
