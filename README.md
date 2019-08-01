@@ -21,18 +21,12 @@ Level Exit: touch the door at the end of each level
 
 ## Credits
 ### Visuals
-Armadillo, Beer, and Cactus by Kim Fasbender (yours truly) 
-
+Armadillo, Beer, and Cactus by [Kim Fasbender](https://github.com/Kimberly-Fasbender) 
 Crowd by R0cc0 on [KissPNG](https://www.kisspng.com/png-extended-family-child-clip-art-cartoon-crowd-1336651/) 
-
 Willie Nelson by Captain Kirkkirk on [PNGKey](https://www.pngkey.com/detail/u2w7o0o0q8r5w7a9_captain-kirkkirk-press-release-attachment-press-release-willie/) 
-
 Font by Zetafonts on [Dafont](https://www.dafont.com/bubbleboddy-neue.font) 
-
 Platforms, Background Images, Clouds, Flowers, Trees, Bushes, Enemies, Water, Spikes, Doors, UGI buttons by Bayat Games on [Unity](https://assetstore.unity.com/packages/2d/environments/free-platform-game-assets-85838) 
-
 Music Notes by larsenv on [Spriter's Resource](https://www.spriters-resource.com/wii/wiimusic/sheet/78547/) 
-
 Speed Boost Arrows by Fono301 on [KissPNG](https://www.kisspng.com/png-line-triangle-technology-clip-art-sprite-arrow-4853581/) 
 
 
