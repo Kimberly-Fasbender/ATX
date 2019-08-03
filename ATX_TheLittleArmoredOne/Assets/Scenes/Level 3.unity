@@ -5983,7 +5983,7 @@ TilemapRenderer:
   m_SortingLayer: 10
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0.00390625, z: 0}
+  m_ChunkCullingBounds: {x: 0.003937006, y: 0.007874012, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -20833,8 +20833,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 14.111839, y: 6.4976907}
-      - {x: 14.090608, y: -4.5987625}
+    - - {x: 14.12952, y: 6.4976907}
+      - {x: 14.109192, y: -4.5987625}
       - {x: 56.9395, y: -4.6662455}
       - {x: 56.928272, y: 6.490288}
 --- !u!1 &632149748
@@ -32719,12 +32719,12 @@ PrefabInstance:
     - target: {fileID: 8818252406746557130, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5745745
+      value: 0.5745897
       objectReference: {fileID: 0}
     - target: {fileID: 8818252406746557130, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5594326
+      value: -0.553918
       objectReference: {fileID: 0}
     - target: {fileID: 8818252406746556981, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}
@@ -32741,6 +32741,16 @@ PrefabInstance:
       propertyPath: m_AnimatedTarget
       value: 
       objectReference: {fileID: 1024879797}
+    - target: {fileID: 8818252405917984661, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.649086
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818252405917984661, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.095448
+      objectReference: {fileID: 0}
     - target: {fileID: 8818252405917984682, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}
       propertyPath: m_Follow
@@ -32771,16 +32781,6 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 612564939}
-    - target: {fileID: 8818252405917984661, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.649086
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818252405917984661, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.095448
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8818252406746556983, guid: 4c46597bcc6ed4f628c08e6ded57fe3d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c46597bcc6ed4f628c08e6ded57fe3d, type: 3}
