@@ -19,4 +19,20 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(6);
     }
+
+    public void PlayAgain()
+    {
+        GameSession gameSession = FindObjectOfType<GameSession>();
+        
+        if (gameSession)
+        {
+            gameSession.ResetGameSession();
+
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
 }

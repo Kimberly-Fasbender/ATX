@@ -43,7 +43,6 @@ public class GameSession : MonoBehaviour
     {
         if (scene.name == "Main Menu")
         {
-            Debug.Log("Destroying Game Session...in OnLevelLoaded function");
             Destroy(gameObject);
         }
     }
