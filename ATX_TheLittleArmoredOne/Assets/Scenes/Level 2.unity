@@ -9938,10 +9938,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -6.175958, y: 6.142899}
+    - - {x: -6.175958, y: 6.134998}
       - {x: -6.1715403, y: -4.8393974}
       - {x: 53.85222, y: -4.888349}
-      - {x: 53.858727, y: 6.134285}
+      - {x: 53.854683, y: 6.1298666}
 --- !u!1001 &615085875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38644,12 +38644,12 @@ PrefabInstance:
     - target: {fileID: 8818252406746557130, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.223858
+      value: -20.668304
       objectReference: {fileID: 0}
     - target: {fileID: 8818252406746557130, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08305116
+      value: 0.081975415
       objectReference: {fileID: 0}
     - target: {fileID: 8818252406746556981, guid: 4c46597bcc6ed4f628c08e6ded57fe3d,
         type: 3}

@@ -22,19 +22,6 @@ public class ScenePersistence : MonoBehaviour
             }
         }
         DontDestroyOnLoad(gameObject);
-    
-        // int numOfScenePersistence = FindObjectsOfType<ScenePersistence>().Length;
-
-        
-        // if (numOfScenePersistence > 1)
-        // {
-        //     Destroy(gameObject);
-        // }
-        // else
-        // {
-        //     DontDestroyOnLoad(gameObject);
-        // }
-
     }
    
     void Start()
