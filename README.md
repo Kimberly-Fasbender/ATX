@@ -7,16 +7,16 @@ ATX: Get to the Fest is a browser-based game made using Unity (version 2019.1.10
 
 ## How To Play the Game
 
-Available for play on itch.io: 
+Available for play on itch.io: https://kfasbender.itch.io/atx-get-to-the-fest
 
-Controls 
-Run: left and right arrows
-Jump: space bar (jump higher the longer you hold the button down)
-Roll: automatic when running up or down slope
+### Controls  
+Run: left and right arrows<br>
+Jump: space bar (jump higher the longer you hold the button down)<br>
+Roll: automatic when running up or down slope<br>
 
-Features 
-Speed Arrows: increases your upward roll speed when you roll through them
-Giant Flowers: 
+### Features  
+Speed Arrows: increases your upward roll speed when you roll through them<br>
+Giant Flowers: jump on them to bounce 
 Level Exit: touch the door at the end of each level
 
 ## Credits
@@ -50,7 +50,7 @@ Level Exit by Tuudurt on [Free Sound](https://freesound.org/people/Tuudurt/sound
 ** to be added **
 
 ## Game Trailer
-** to be added **
+Availabe for view on [YouTube](https://youtu.be/RtQDacMSdbI)
 
 ## Screen Captures
 ** to be added **
