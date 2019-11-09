@@ -1,13 +1,10 @@
 # ATX: Get to the Fest
 Ada Developers Academy - C11 Capstone Project
 
-A 2D platformer game where you play an armadillo who is following the sound of live music through Austin, TX! Collect as many music notes as you can, avoid enemies, enjoy the sites, and grab as many beers as you can find, all in the name of seeing a great show! 
-
-ATX: Get to the Fest is a browser-based game made using Unity (version 2019.1.10f1) and C# scripting.
+ATX: Get to the Fest is a browser based 2D platformer where you play an armadillo who is following the sound of live music through Austin, TX! Collect as many music notes as you can, avoid enemies, enjoy the sites, and grab as many beers as you can find, all in the name of seeing a great show! 
 
 ## How To Play the Game
-
-Available for play on itch.io: https://kfasbender.itch.io/atx-get-to-the-fest
+Available for play on itch.io: [PLAY ATX: GET TO THE FEST!](https://kfasbender.itch.io/atx-get-to-the-fest)
 
 ### Controls  
 Run: left and right arrows<br>
@@ -16,8 +13,13 @@ Roll: automatic when running up or down slope<br>
 
 ### Features  
 Speed Arrows: increases your upward roll speed when you roll through them<br>
-Giant Flowers: jump on them to bounce 
-Level Exit: touch the door at the end of each level
+Giant Flowers: jump on them to bounce<br>
+Level Exit: touch the door at the end of each level<br>
+
+## Technologies
+Game Engine: Unity (version: 2019.1.10f1)<br>
+Scripting: C#<br><br>
+[Trello Board](https://trello.com/b/ia27pqUr/atx)
 
 ## Credits
 ### Visuals
@@ -47,7 +49,9 @@ Thwomp by MentalSanityOff on [Open Game Art](https://opengameart.org/content/jum
 Level Exit by Tuudurt on [Free Sound](https://freesound.org/people/Tuudurt/sounds/258142/)<br>
 
 ## Future Plans
-** to be added **
+* Volume control and music on/off functionality
+* Login/Logout functionality using Firebase for Auth
+* Scoreboard and Save functionality using SQLite or MySQL
 
 ## Game Trailer
 Availabe for view on [YouTube](https://youtu.be/RtQDacMSdbI)
