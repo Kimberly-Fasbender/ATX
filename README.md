@@ -1,10 +1,10 @@
-# ATX: Get to the Fest
-Ada Developers Academy - C11 Capstone Project
+![alt text](https://i.ibb.co/kDCMV2z/Screen-Shot-2019-07-31-at-9-48-57-PM.jpg "ATX: Get to the Fest Banner")
+Ada Developers Academy - C11 - Capstone Project
 
 ATX: Get to the Fest is a browser based 2D platformer where you play an armadillo who is following the sound of live music through Austin, TX! Collect as many music notes as you can, avoid enemies, enjoy the sites, and grab as many beers as you can find, all in the name of seeing a great show! 
 
 ## How To Play the Game
-Available for play on itch.io: [PLAY ATX: GET TO THE FEST!](https://kfasbender.itch.io/atx-get-to-the-fest)
+Available for play on itch.io: [PLAY ATX: GET TO THE FEST](https://kfasbender.itch.io/atx-get-to-the-fest)
 
 ### Controls  
 Run: left and right arrows<br>
@@ -18,8 +18,16 @@ Level Exit: touch the door at the end of each level<br>
 
 ## Technologies
 Game Engine: Unity (version: 2019.1.10f1)<br>
-Scripting: C#<br><br>
-[Trello Board](https://trello.com/b/ia27pqUr/atx)
+Scripting: C#<br>
+Trello Board: https://trello.com/b/ia27pqUr/atx<br>
+
+## Future Plans
+* Volume control and music on/off functionality
+* Login/Logout functionality using Firebase for Auth
+* Scoreboard and Save functionality using SQLite or MySQL
+
+## Game Trailer
+Availabe for view on [YouTube](https://youtu.be/RtQDacMSdbI)
 
 ## Credits
 ### Visuals
@@ -30,7 +38,6 @@ Font by Zetafonts on [Dafont](https://www.dafont.com/bubbleboddy-neue.font)<br>
 Platforms, Background Images, Clouds, Flowers, Trees, Bushes, Enemies, Water, Spikes, Doors, UGI buttons by Bayat Games on [Unity](https://assetstore.unity.com/packages/2d/environments/free-platform-game-assets-85838)<br>
 Music Notes by larsenv on [Spriter's Resource](https://www.spriters-resource.com/wii/wiimusic/sheet/78547/)<br>
 Speed Boost Arrows by Fono301 on [KissPNG](https://www.kisspng.com/png-line-triangle-technology-clip-art-sprite-arrow-4853581/)<br>
-
 
 ### Music
 Main Menu Music - Armadillo by Yubatake on [Open Game Art](https://opengameart.org/content/armadillo)<br>
@@ -48,13 +55,8 @@ Flower Bounce by Boing Raw Copyright 2005 cfork on [Free Sound](http://freesound
 Thwomp by MentalSanityOff on [Open Game Art](https://opengameart.org/content/jump-landing-sound)<br>
 Level Exit by Tuudurt on [Free Sound](https://freesound.org/people/Tuudurt/sounds/258142/)<br>
 
-## Future Plans
-* Volume control and music on/off functionality
-* Login/Logout functionality using Firebase for Auth
-* Scoreboard and Save functionality using SQLite or MySQL
-
-## Game Trailer
-Availabe for view on [YouTube](https://youtu.be/RtQDacMSdbI)
-
 ## Screen Captures
-** to be added **
+![alt text](https://i.ibb.co/3MkzPVq/Screen-Shot-2019-08-07-at-6-29-59-PM.png "ATX: Spikes and Music Notes Screen Capture")
+![alt text](https://i.ibb.co/8dZt7CD/Screen-Shot-2019-11-10-at-4-00-28-PM.png "ATX: Thwomp Screen Capture")
+![alt text](https://i.ibb.co/Gdqt1h9/Screen-Shot-2019-11-10-at-4-08-34-PM.png "ATX: Jumping Between Enemies")
+![alt text](https://i.ibb.co/Sx5v1Js/Screen-Shot-2019-11-10-at-4-03-10-PM.png "ATX: Death Scene Screen Capture")
