@@ -24,7 +24,7 @@ Trello Board: https://trello.com/b/ia27pqUr/atx<br>
 ## Future Plans
 * Volume control and music on/off functionality
 * Login/Logout functionality using Firebase for Auth
-* Scoreboard and Save functionality using SQLite or MySQL
+* Scoreboard and Save functionality using Firebase
 
 ## Game Trailer
 Availabe for view on [YouTube](https://youtu.be/RtQDacMSdbI)
